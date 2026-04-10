@@ -4,4 +4,4 @@ This is a repo to track my Leetcode process
 
 
 ## LeetCode Stats
-![LeetCode Stats](https://leetcode-stats-api.herokuapp.com/<zihaoguo3>)
+![Leetcode Stats](https://leetcard.jacoblin.cool/zihaoguo3)
