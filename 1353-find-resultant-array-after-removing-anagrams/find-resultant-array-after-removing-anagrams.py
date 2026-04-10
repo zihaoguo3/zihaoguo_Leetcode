@@ -6,13 +6,13 @@ class Solution(object):
         """
         if not words:
             return words
-            
-        res = [words[0]]
         
+        j=1
         for i in range(1, len(words)):
             if sorted(words[i]) != sorted(words[i-1]):
-                res.append(words[i])
+                words[j]=words[i]
+                j+=1
                 
-        return res
+        return words[:j]
                 
         
