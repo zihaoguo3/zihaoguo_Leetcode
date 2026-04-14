@@ -15,7 +15,7 @@ class Solution(object):
                 if count[s[l]]==0:
                     del count[s[l]]
                 l+=1
-            if len(count)==3:
+            if len(count)==3 and (r-l+1):
                 max_sub+=1
         return max_sub
             
