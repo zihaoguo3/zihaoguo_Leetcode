@@ -5,25 +5,23 @@ class Solution(object):
         :type power: int
         :rtype: int
         """
-        tokens.sort()
         n=len(tokens)
-        start=0
-        end=n-1
-        points=0
-        max_score=0
+        tokens.sort()
+        max_point=0
+        point=0
+        left=0
+        right=n-1
 
-        while start<=end:
-            if power>=tokens[start]:
-                points+=1
-                power-=tokens[start]
-                max_score=max(max_score,points)
-                start+=1
-            elif points>0 and start<end:
-                points-=1
-                power+=tokens[end]
-                end-=1
+        while left<=right:
+            if tokens[left]<=power:
+                power-=tokens[left]
+                point+=1
+                max_point=max(max_point,point)
+                left+=1
+            elif point>0:
+                power+=tokens[right]
+                point-=1
+                right-=1
             else:
                 break
-        return max_score
-
-        
+        return max_point
