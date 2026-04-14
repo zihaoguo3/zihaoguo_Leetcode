@@ -6,8 +6,18 @@ class Solution(object):
         """
         
         square=[0]*len(nums)
-        for i, num in enumerate(nums):
-            square[i]=num**2
-        return sorted(square)
+        l=0
+        r=len(nums)-1
+        
+        for i in range(len(nums)-1,-1,-1):
+            if abs(nums[l])>abs(nums[r]):
+                square[i]=nums[l]**2
+                l+=1
+            else:
+                square[i]=nums[r]**2
+                r-=1
+        return square
+
+        
     
     
