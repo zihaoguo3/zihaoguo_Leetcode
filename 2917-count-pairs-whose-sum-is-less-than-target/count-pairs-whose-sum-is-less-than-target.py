@@ -7,17 +7,17 @@ class Solution(object):
         """
         nums.sort()
         n=len(nums)
-        start=0
-        end=n-1
+        left=0
+        right=n-1
         count=0
 
-        while start<end:
-            if nums[start]+nums[end]<target:
-                count+=(end-start)
-                start+=1
+        while left<right:
+            s=nums[left]+nums[right]
+            if s<target:
+                count+=(right-left)
+                left+=1
             else:
-                end-=1
+                right-=1
         return count
-            
 
-        
+
