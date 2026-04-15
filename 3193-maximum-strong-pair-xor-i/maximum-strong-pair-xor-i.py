@@ -4,12 +4,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        nums.sort()
         max_xor=0
         n=len(nums)
+        l=0
 
-        for i in range(n):
-            for j in range(n):
-                if abs(nums[j]-nums[i])<=min(nums[j],nums[i]):
-                    max_xor=max(max_xor,nums[j]^nums[i])
+        for r in range(n):
+            while abs(nums[r]-nums[l])>min(nums[l],nums[r]):
+                l+=1
+            for i in range(l,r+1):
+                max_xor=max(max_xor,nums[i]^nums[r])
+
                     
         return max_xor
