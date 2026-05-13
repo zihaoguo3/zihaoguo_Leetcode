@@ -21,7 +21,7 @@ class Solution(object):
             if i==n or j==n:
                 return i==j
             if start[i] != result[j]:
-                            return False
+                return False
             
             if start[i]=='L' and i<j:
                 return False
