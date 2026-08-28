@@ -5,15 +5,17 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: int
         """
-        left, right=0,0
+        left, right= 0, 0
 
-        while left<len(nums1) and right<len(nums2):
+        n1=len(nums1)
+        n2=len(nums2)
+
+        while left<n1 and right<n2:
             if nums1[left]<nums2[right]:
-                left+=1
+                left+=1 
             elif nums1[left]>nums2[right]:
                 right+=1
             else:
-                return nums2[right]
+                return nums1[left]
         return -1
-            
-        
+                
